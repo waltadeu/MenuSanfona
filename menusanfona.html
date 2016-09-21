@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--/* Walter 02.09.2016 */-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Menu Sanfona</title>
+    
+    <style>
+      .topicos-content {
+        padding: 0px 0px 0px 33px;
+        display: none;
+        background-color: white;
+      }
+
+      .topicos-content.show {
+        display: block;
+      }
+
+      button.topicTitle {
+        background-color: transparent;
+        color: #004181;
+        cursor: pointer;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        transition: 0.4s;
+      }
+
+      .topicStrong .topicTitle {
+         font-weight: bold;
+      }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <!--CONTEÚDO-->
+        <div class="topicos">
+          <div class="topicos-item topicStrong">
+            <button class="topicTitle topicos-1" for="topicos-1">1) Tópico um</button>
+            <div class="topicos-content">Curabitur tempus, arcu id bibendum elementum, ipsum augue venenatis odio, porta mattis metus nunc a neque.</div>
+          </div>
+          <div class="topicos-item topicStrong">
+            <button class="topicTitle topicos-1" for="topicos-2">2) Tópico dois</button>
+            <div class="topicos-content">Curabitur tempus, arcu id bibendum elementum, ipsum augue venenatis odio, porta mattis metus nunc a neque.</div>
+          </div>
+          <div class="topicos-item topicStrong">
+            <button class="topicTitle topicos-1" for="topicos-3">3) Tópico três</button>
+            <div class="topicos-content">Curabitur tempus, arcu id bibendum elementum, ipsum augue venenatis odio, porta mattis metus nunc a neque.</div>
+          </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script>
+    // Menu Abre-Fecha
+    // Variável = Botões
+    var botao = document.getElementsByClassName("topicTitle");
+    var i;
+
+    // Faz looping para pegar cada botão e adicionar o toggle de click
+    for (i = 0; i < botao.length; i++) {
+       botao[i].onclick = function(){
+    	    // Aplica e remove class .show
+          this.classList.toggle("active");
+          this.nextElementSibling.classList.toggle("show");
+      }
+    }
+</script>
+</body>
+
+</html>
